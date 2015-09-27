@@ -12,12 +12,12 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.LeftArrow)
-		   		moveX = -1;
-		else if (Input.GetKey(KeyCode.RightArrow)
-		   		moveX = 1;
-		else 
-		         moveX = 0;
+        if (Input.GetKey(KeyCode.LeftArrow)
+            moveX = -1;
+        else if (Input.GetKey(KeyCode.RightArrow)
+                moveX = 1;
+        else
+            moveX = 0;
 		if (Input.GetKey(KeyCode.DownArrow)
 		   		moveY = -1;
 		else if (Input.GetKey(KeyCode.UpArrow)
