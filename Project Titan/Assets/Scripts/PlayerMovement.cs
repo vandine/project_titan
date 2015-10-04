@@ -3,7 +3,9 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
-	float speed = 5.0f;
+    public bool wasdControls;
+
+    float speed = 5.0f;
 	float moveX = 0;
 	float moveY = 0;
     float acceleration = 0.1f;
@@ -14,10 +16,10 @@ public class PlayerMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        bool left = Input.GetKey(KeyCode.LeftArrow);
-        bool right = Input.GetKey(KeyCode.RightArrow);
-        bool down = Input.GetKey(KeyCode.DownArrow);
-        bool up = Input.GetKey(KeyCode.UpArrow);
+        bool left = wasdControls ? Input.GetKey(KeyCode.A) : Input.GetKey(KeyCode.LeftArrow);
+        bool right = wasdControls ? Input.GetKey(KeyCode.D) : Input.GetKey(KeyCode.RightArrow);
+        bool down = wasdControls ? Input.GetKey(KeyCode.S) : Input.GetKey(KeyCode.DownArrow);
+        bool up = wasdControls ? Input.GetKey(KeyCode.W) : Input.GetKey(KeyCode.UpArrow);
         if(left == right)
         {
             moveX = 0;
