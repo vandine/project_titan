@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	public GameObject player;
 	public Rigidbody2D projectile;
 	public float interval;
-	public float lastFired;
+	float lastFired;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player1");
@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour {
         else if (left)
         {
             moveX = Mathf.Max(moveX - acceleration, -1);
-        }
+
+		}
         else if (right)
         {
             moveX = Mathf.Min(moveX + acceleration, 1);
